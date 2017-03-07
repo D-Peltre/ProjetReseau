@@ -1,0 +1,19 @@
+
+Les trois bâtiments devront être couverts en Wifi (Vous devez déterminer le nombre et l’emplacement des points d’accès WIFI grâce aux plans fournis.)
+Du NAT dynamique avec surcharge devra permettre aux utilisateurs de sortir vers le site internet exia.cesi.fr
+Assurer la sécurité des accès aux équipements d’interconnexion
+Le site distant de production est relié par une liaison opérateur. Vous n’avez pas la charge de cette liaison, vous supposerez qu’elle est existante et fonctionnelle. Un protocole de routage dynamique devra néanmoins pouvoir assurer les communications entre la production et le reste des services.
+L’ensemble des employés devront pouvoir accéder au site intranet situé dans la salle informatique principale
+Les utilisateurs du réseau devront pouvoir accéder à cet intranet en tapant une URL dans un navigateur
+L’ensemble des employés devront pouvoir accéder à leurs mails et s’en échanger (un service de mail sera à mettre en place seulement dans le cadre de l’utilisation de packet tracer.)
+L’ensemble des employés devront pouvoir accéder à internet
+Les informaticiens devront pouvoir accéder au serveur « TFTP info » situé dans la salle informatique principale
+Les informaticiens devront pouvoir accéder en SSH aux équipements d’interconnexion
+Les chercheurs devront pouvoir accéder au serveur « TFTP recherche » situé dans la salle informatique principale
+Les différents services informatiques (support/infrastructure/développement) devront être autorisés à échanger sur l’ensemble des protocoles.
+Le reste devra être bloqué.
+
+
+Proposer un devis pour ce matériel (merci de préciser la désignation complète pour un matériel et de justifier les prix).
+Proposer une configuration de ces équipements.
+Réaliser une maquette la plus complète et fonctionnelle possible. Celle-ci sera présentée à l’équipe du MOA lors de la dernière réunion du projet.
