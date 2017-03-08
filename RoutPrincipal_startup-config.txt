@@ -1,0 +1,219 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname RouterP
+!
+!
+!
+!
+ip dhcp excluded-address 172.16.2.161
+ip dhcp excluded-address 172.16.2.162
+ip dhcp excluded-address 172.16.2.163
+ip dhcp excluded-address 172.16.2.1
+ip dhcp excluded-address 172.16.2.2
+ip dhcp excluded-address 172.16.2.3
+ip dhcp excluded-address 172.16.2.209
+ip dhcp excluded-address 172.16.2.210
+ip dhcp excluded-address 172.16.2.211
+ip dhcp excluded-address 172.16.2.65
+ip dhcp excluded-address 172.16.2.66
+ip dhcp excluded-address 172.16.2.67
+ip dhcp excluded-address 172.16.0.1
+ip dhcp excluded-address 172.16.0.2
+ip dhcp excluded-address 172.16.0.3
+ip dhcp excluded-address 172.16.2.193
+ip dhcp excluded-address 172.16.2.194
+ip dhcp excluded-address 172.16.2.195
+ip dhcp excluded-address 172.16.2.129
+ip dhcp excluded-address 172.16.2.130
+ip dhcp excluded-address 172.16.2.131
+ip dhcp excluded-address 172.16.2.225
+ip dhcp excluded-address 172.16.2.226
+ip dhcp excluded-address 172.16.2.227
+ip dhcp excluded-address 172.16.2.97
+ip dhcp excluded-address 172.16.2.98
+ip dhcp excluded-address 172.16.2.99
+ip dhcp excluded-address 172.16.2.241
+ip dhcp excluded-address 172.16.2.242
+ip dhcp excluded-address 172.16.2.243
+!
+ip dhcp pool logistique
+ network 172.16.2.160 255.255.255.224
+ default-router 172.16.2.163
+ip dhcp pool informatique
+ network 172.16.2.0 255.255.255.192
+ default-router 172.16.2.3
+ip dhcp pool comptabilite
+ network 172.16.2.208 255.255.255.240
+ default-router 172.16.2.211
+ip dhcp pool secretariat
+ network 172.16.2.64 255.255.255.224
+ default-router 172.16.2.67
+ip dhcp pool retd
+ network 172.16.0.0 255.255.254.0
+ default-router 172.16.0.3
+ip dhcp pool supportclient
+ network 172.16.2.192 255.255.255.240
+ default-router 172.16.2.195
+ip dhcp pool communication
+ network 172.16.2.128 255.255.255.224
+ default-router 172.16.2.131
+ip dhcp pool rh
+ network 172.16.2.224 255.255.255.240
+ default-router 172.16.2.227
+ip dhcp pool direction
+ network 172.16.2.96 255.255.255.224
+ default-router 172.16.2.99
+ip dhcp pool secretariatdirection
+ network 172.16.2.240 255.255.255.240
+ default-router 172.16.2.243
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username RoutPrincipal password 0 lucas
+username RouterPrincipal password 0 CESI
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524O38Z
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name viacesi.fr
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.1
+ encapsulation dot1Q 10
+ ip address 172.16.2.161 255.255.255.224
+ standby 10 ip 172.16.2.163
+ standby 10 priority 105
+ standby 10 preempt
+!
+interface GigabitEthernet0/0.2
+ encapsulation dot1Q 20
+ ip address 172.16.2.1 255.255.255.192
+ standby 20 ip 172.16.2.3
+ standby 20 priority 105
+ standby preempt
+!
+interface GigabitEthernet0/0.3
+ encapsulation dot1Q 30
+ ip address 172.16.2.209 255.255.255.240
+ standby 30 ip 172.16.2.211
+ standby 30 priority 105
+ standby preempt
+!
+interface GigabitEthernet0/0.4
+ encapsulation dot1Q 40
+ ip address 172.16.2.65 255.255.255.224
+ standby 40 ip 172.16.2.67
+ standby 40 priority 105
+ standby preempt
+!
+interface GigabitEthernet0/0.5
+ encapsulation dot1Q 50
+ ip address 172.16.0.1 255.255.254.0
+ standby 50 ip 172.16.0.3
+ standby 50 priority 105
+ standby preempt
+!
+interface GigabitEthernet0/0.6
+ encapsulation dot1Q 60
+ ip address 172.16.2.193 255.255.255.240
+ standby 60 ip 172.16.2.195
+ standby 60 priority 105
+ standby 60 preempt
+!
+interface GigabitEthernet0/0.7
+ encapsulation dot1Q 70
+ ip address 172.16.2.129 255.255.255.224
+ standby 70 ip 172.16.2.131
+ standby 70 priority 105
+ standby 70 preempt
+!
+interface GigabitEthernet0/0.8
+ encapsulation dot1Q 80
+ ip address 172.16.2.225 255.255.255.240
+ standby 80 ip 172.16.2.227
+ standby 80 priority 105
+ standby 80 preempt
+!
+interface GigabitEthernet0/0.9
+ encapsulation dot1Q 90
+ ip address 172.16.2.97 255.255.255.224
+ standby 90 ip 172.16.2.99
+ standby 90 priority 105
+ standby 90 preempt
+!
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 100
+ ip address 172.16.2.241 255.255.255.240
+ standby 100 ip 172.16.2.243
+ standby 100 priority 105
+ standby 100 preempt
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/2
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router rip
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
+
