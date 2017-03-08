@@ -1,0 +1,10 @@
+
+Assurer la sécurité des accès aux équipements d’interconnexion
+Le site distant de production est relié par une liaison opérateur. Vous n’avez pas la charge de cette liaison, vous supposerez qu’elle est existante et fonctionnelle. Un protocole de routage dynamique devra néanmoins pouvoir assurer les communications entre la production et le reste des services.
+
+Le reste devra être bloqué.
+
+
+Proposer un devis pour ce matériel (merci de préciser la désignation complète pour un matériel et de justifier les prix).
+Proposer une configuration de ces équipements.
+Réaliser une maquette la plus complète et fonctionnelle possible. Celle-ci sera présentée à l’équipe du MOA lors de la dernière réunion du projet.
